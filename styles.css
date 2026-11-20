@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1d20;
+    color: #e6e2d8;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Pantalla de carga */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 24, 28, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #4a5568;
+    border-top-color: #d4af37;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Contenedor 3D */
+#canvas-container {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pie de página institucional e interactivo */
+footer {
+    background: linear-gradient(180deg, #23282d 0%, #14171a 100%);
+    border-top: 3px solid #b8860b;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    z-index: 10;
+}
+
+/* Requisito 8d: Arial, negrita, H1 y color acorde a la escena 3D */
+.scene-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.45rem;
+    color: #e5b84b; /* Dorado nórdico acorde al escenario */
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.team-list {
+    list-style: none;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    line-height: 1.45;
+}
+
+.team-list code {
+    background: #2d3748;
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: #f6e05e;
+}
+
+/* Tablero de controles */
+.controls-board h2 {
+    font-size: 0.95rem;
+    color: #e5b84b;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.keys-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 8px 18px;
+    font-size: 0.85rem;
+}
+
+.key-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+kbd {
+    background-color: #2d333b;
+    border: 1px solid #6e7681;
+    border-bottom-width: 3px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 0.82rem;
+    font-weight: bold;
+    padding: 2px 7px;
+}
+
+@media (max-width: 900px) {
+    body {
+        overflow-y: auto;
+        height: auto;
+    }
+    #canvas-container {
+        height: 65vh;
+    }
+    .keys-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

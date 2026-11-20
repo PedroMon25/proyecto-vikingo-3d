@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldea Vikinga 3D - Control de Escenario Integral</title>
+    <!-- Ícono en la pestaña acorde al diseño -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Importmap para cargar Three.js y sus complementos de forma moderna y compatible con GitHub Pages -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Pantalla de carga mientras descargan el HDR y los FBX -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <p id="loader-text">Cargando escenario vikingo y modelos 3D...</p>
+    </div>
+
+    <!-- Contenedor donde Three.js renderiza el canvas WebGL -->
+    <main id="canvas-container"></main>
+
+    <!-- Pie de página con todos los requisitos del punto 8 -->
+    <footer>
+        <div class="footer-section title-team">
+            <!-- Título en Arial, negrita, H1 y color acorde a la escena -->
+            <h1 class="scene-title">ALDEA VIKINGA: TIERRAS DEL NORTE 3D</h1>
+            <ul class="team-list">
+                <li><strong>Pedro Carlos Montalbo Castro</strong> — No. Control: <code>24200096</code></li>
+                <li><strong>Octavio Armando Reyes Álvarez</strong> — No. Control: <code>24200223</code></li>
+                <li><strong>Pablo Horacio Velázquez Téllez</strong> — No. Control: <code>24200102</code></li>
+            </ul>
+        </div>
+
+        <div class="footer-section controls-board">
+            <h2>Tablero de Instrucciones</h2>
+            <div class="keys-grid">
+                <div class="key-item"><kbd>W</kbd> / <kbd>S</kbd> <span>Caminar / Retroceder</span></div>
+                <div class="key-item"><kbd>Shift</kbd> + <kbd>W</kbd> <span>Correr</span></div>
+                <div class="key-item"><kbd>A</kbd> / <kbd>D</kbd> <span>Giro libre suave</span></div>
+                <div class="key-item"><kbd>Q</kbd> / <kbd>E</kbd> <span>Giro rápido 90°</span></div>
+                <div class="key-item"><kbd>Espacio</kbd> <span>Saltar</span></div>
+                <div class="key-item"><kbd>F</kbd> / <kbd>Clic</kbd> <span>Golpear y romper objetos</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
